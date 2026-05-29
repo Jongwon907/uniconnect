@@ -1,0 +1,14 @@
+package com.example.demo.common.error.exception;
+
+import com.example.demo.common.error.code.ErrorCode;
+import lombok.Getter;
+
+@Getter
+public class BusinessException extends RuntimeException {
+    private final ErrorCode errorCode;
+
+    public BusinessException(ErrorCode code) {
+        super(code.getMessage());
+        errorCode = code;
+    }
+}
